@@ -16,7 +16,6 @@ public class HelpObject : MonoBehaviour
     IEnumerator SetFalseDelaySec()
     {
         yield return new WaitForSeconds(destroyTime);
-        dialogBox.gameObject.SetActive(true);
         dialogBox.used = false;
         gameObject.SetActive(false);
     }
