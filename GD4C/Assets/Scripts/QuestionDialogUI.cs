@@ -8,13 +8,25 @@ using TMPro;
 public class QuestionDialogUI : MonoBehaviour
 {
     [HideInInspector]public bool used;
-    [SerializeField] GameObject[] objects;
+    [SerializeField] HelpObject[] helpObjects;
 
     public void UseObj(int index)
     {
-        objects[index].SetActive(true);
-        used = true;
-        gameObject.SetActive(false);
+        HelpObject ho = helpObjects[index];
+        if (ho.isHelpful)
+        {
+            ho.gameObject.SetActive(true);
+            used = true;
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            ho.gameObject.SetActive(true);
+            ho.SetFalseDelay();
+            used = true;
+            gameObject.SetActive(false);
+        }
     }
 
+   
 }

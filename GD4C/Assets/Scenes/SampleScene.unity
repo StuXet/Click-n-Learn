@@ -490,7 +490,15 @@ PrefabInstance:
     - target: {fileID: 668782505241849134, guid: 86266d89c98a0b0419609ae8545f03de, type: 3}
       propertyPath: objects.Array.data[0]
       value: 
-      objectReference: {fileID: 1346158093}
+      objectReference: {fileID: 0}
+    - target: {fileID: 668782505241849134, guid: 86266d89c98a0b0419609ae8545f03de, type: 3}
+      propertyPath: helpObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 668782505241849134, guid: 86266d89c98a0b0419609ae8545f03de, type: 3}
+      propertyPath: helpObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1346158097}
     - target: {fileID: 1522938699136047715, guid: 86266d89c98a0b0419609ae8545f03de, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
@@ -636,6 +644,7 @@ GameObject:
   - component: {fileID: 1346158096}
   - component: {fileID: 1346158095}
   - component: {fileID: 1346158094}
+  - component: {fileID: 1346158097}
   m_Layer: 6
   m_Name: Gesher
   m_TagString: Untagged
@@ -734,6 +743,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346158097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346158093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77c7723d7dcd13468e3618cdad13012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isHelpful: 0
+  destroyTime: 2
+  dialogBox: {fileID: 554845464}
 --- !u!1 &1421115488
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +931,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1442387706, guid: 42303504a4fc90a43bc5178df9876bf2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6432609860406773168, guid: 42303504a4fc90a43bc5178df9876bf2, type: 3}
       propertyPath: _jumpHeight
       value: 15
