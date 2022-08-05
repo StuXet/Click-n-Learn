@@ -21,6 +21,17 @@ public class Trigger : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (!dialaogBox.used)
+            {
+                dialaogBox.gameObject.SetActive(true);
+            }
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
