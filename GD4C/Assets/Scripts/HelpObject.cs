@@ -5,15 +5,15 @@ using UnityEngine;
 public class HelpObject : MonoBehaviour
 {
     public bool isHelpful;
-    public int destroyTime;
-    [SerializeField] QuestionDialogUI dialogBox;
+    public float destroyTime;
+    [SerializeField] protected QuestionDialogUI dialogBox;
 
     public void SetFalseDelay()
     {
         StartCoroutine(SetFalseDelaySec()); 
     }
 
-    IEnumerator SetFalseDelaySec()
+    virtual protected IEnumerator SetFalseDelaySec()
     {
         yield return new WaitForSeconds(destroyTime);
         dialogBox.used = false;
