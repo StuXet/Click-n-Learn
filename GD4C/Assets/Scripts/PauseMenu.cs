@@ -25,9 +25,6 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    /*Resume to the game, lock the cursor to not be visible and to not be able to click on things in the game and desktop
-    Set pause menu ui and bool variable to false
-    Set game timescale to 1f to be able to game*/
     public void Resume()
     {
         //Cursor.lockState = CursorLockMode.Locked;
@@ -36,9 +33,6 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
     }
 
-    /*Pause the game, unlock the cursor to be visible and to be able to click on things in the game
-    Set pause menu ui and bool variable to true
-    Set game timescale to 0f to pause the game*/
     void Pause()
     {
         //Cursor.lockState = CursorLockMode.Confined;
@@ -47,14 +41,13 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = true;
     }
 
-    //Load the current scene again
+    //Currently load scene 1 again because we have 1 level, in the future with more level this code needs to be rewritten
     public void Restart()
     {
         SceneManager.LoadScene(1);
         Time.timeScale = 1f;
     }
 
-    //Quit the game to desktop
     public void QuitGame()
     {
         Debug.Log("QUIT");
