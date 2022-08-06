@@ -26,7 +26,10 @@ namespace TarodevController {
         private bool _active;
         void Awake() => Invoke(nameof(Activate), 0.5f);
         void Activate() =>  _active = true;
-        
+
+        [SerializeField] Transform _player;
+        [SerializeField] Transform _fallRespawnPoint;
+
         private void Update() {
             if(!_active) return;
             // Calculate velocity
@@ -42,6 +45,11 @@ namespace TarodevController {
             CalculateJump(); // Possibly overrides vertical
 
             MoveCharacter(); // Actually perform the axis movement
+
+            if (_player.transform.position.y < -18) //Set respawn point when player transform y axis a is smaller than -18
+            {
+                _player.transform.position = _fallRespawnPoint.transform.position;
+            }
         }
 
 
